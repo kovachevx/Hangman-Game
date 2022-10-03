@@ -1,0 +1,13 @@
+.modalContainer {
+    margin-top: 120px !important;
+}
+
+.success {
+    background-color: rgb(25,135,84);
+    color: white;
+}
+
+.danger {
+    background-color: rgb(220,53,69);
+    color: white;
+}

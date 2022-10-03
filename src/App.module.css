@@ -1,0 +1,14 @@
+.container {
+  max-width: 4080px;
+  padding: 0 80px;
+}
+
+.true {
+  background-color: rgba(0, 0, 0, 0.903);
+  color: white;
+}
+
+.false {
+  background-color: white;
+  color: black;
+}

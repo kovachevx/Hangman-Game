@@ -1,0 +1,11 @@
+.bar {
+    width: 712px;
+    margin-top: 3px;
+}
+
+.progressBarContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
