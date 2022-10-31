@@ -1,4 +1,4 @@
-import React, { createContext, useEffect } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import useLocalStorage from "./localStorageHook";
 import gameOn, { newGame } from "./updateLevelState";
 
@@ -10,13 +10,13 @@ export function GameProgressStore(props) {
     const [updatedChosenWord, setUpdatedChosenWord] = useLocalStorage('chosenWord', chosenWord);
     const [updatedDisplayedWord, setUpdatedDisplayedWord] = useLocalStorage('displayedWord', displayedWord);
     const [correctLetters, setCorrectLetters] = useLocalStorage('correctLetters', CORRECT_LETTERS);
-    const [guessedLetters, setGuessedLetters] = useLocalStorage('guessedLetters', []);
     const [updatedLetterOptions, setUpdatedLetterOptions] = useLocalStorage('letterOptions', letterOptions);
     const [lifePoints, setLifePoints] = useLocalStorage('lifePoints', 6);
     const [currentLevel, setCurrentLevel] = useLocalStorage('currentLevel', 0);
-    const [modalIsOpen, setModalIsOpen] = useLocalStorage('modalIsOpen', false);
-    const [modalProps, setModalProps] = useLocalStorage('modalProps', {});
-    const [isDarkMode, setIsDarkMode] = useLocalStorage('isDarkMode', false);
+    const [guessedLetters, setGuessedLetters] = useState([]);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [modalProps, setModalProps] = useState({});
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
     const nextLevel = () => {
         const newLevelProps = gameOn();
